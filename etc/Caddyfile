@@ -1,0 +1,105 @@
+test.test:80 {
+	tls off
+	root www
+}
+
+php71.test:80 {
+	tls off
+	root www/php_test
+
+	fastcgi / 127.0.0.1:9001 php
+	rewrite {
+		to {path} {path}/ /index.php?{query}
+	}
+}
+
+php72.test:80 {
+	tls off
+	root www/php_test
+
+	fastcgi / 127.0.0.1:9002 php
+	rewrite {
+		to {path} {path}/ /index.php?{query}
+	}
+}
+
+khohnc.test:80 {
+	tls off
+	root www/khohnc/public
+
+	fastcgi / 127.0.0.1:9001 php
+	rewrite {
+		to {path} {path}/ /index.php?{query}
+	}
+}
+
+hgc.test:80 {
+	tls off
+	root www/hgc/web
+
+	fastcgi / 127.0.0.1:9001 php
+	rewrite {
+		to {path} {path}/ /index.php?{query}
+	}
+}
+
+abs.test:80 {
+	tls off
+	root www/abs/public
+
+	fastcgi / 127.0.0.1:9001 php
+	rewrite {
+		to {path} {path}/ /index.php?{query}
+	}
+}
+
+192.168.1.3.nip.io:80,
+172.17.18.162.nip.io:80,
+ctv.test:80 {
+	tls off
+	root www/ctv/public
+
+	fastcgi / 127.0.0.1:9001 php
+	rewrite {
+		to {path} {path}/ /index.php?{query}
+	}
+}
+
+vinbuy.test:80 {
+	tls off
+	root www/vinbuy/public
+
+	fastcgi / 127.0.0.1:9001 php
+	rewrite {
+		to {path} {path}/ /index.php?{query}
+	}
+}
+
+gmp.test:80 {
+	tls off
+	root www/gmp/public
+
+	fastcgi / 127.0.0.1:9002 php
+	rewrite {
+		to {path} {path}/ /index.php?{query}
+	}
+}
+
+simplemvc.test:80 {
+	tls off
+	root www/simple_mvc
+
+	fastcgi / 127.0.0.1:9001 php
+	rewrite {
+		to {path} {path}/ /index.php?{query}
+	}
+}
+
+giothanhle.test:80 {
+	tls off
+	root /Users/khanhicetea/work/foss/giothanhle/giothanhle/static
+
+	proxy / 127.0.0.1:5000 {
+		except /assets
+	}
+}
